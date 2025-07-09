@@ -1,0 +1,64 @@
+Match Number,Round Number,Date,Location,Home Team,Away Team,Group,Result
+1,1,15/06/2025 00:00,Hard Rock Stadium,Al Ahly FC,Inter Miami CF,Group A,0 - 0
+2,1,15/06/2025 16:00,TQL Stadium,FC Bayern München,Auckland City FC,Group C,10 - 0
+3,1,15/06/2025 19:00,Rose Bowl Stadium,Paris Saint-Germain,Atlético de Madrid,Group B,4 - 0
+4,1,15/06/2025 22:00,MetLife Stadium,Palmeiras,FC Porto,Group A,0 - 0
+5,1,16/06/2025 02:00,Lumen Field,Botafogo,Seattle Sounders FC,Group B,2 - 1
+6,1,16/06/2025 19:00,Mercedes-Benz Stadium,Chelsea FC,LAFC,Group D,2 - 0
+7,1,16/06/2025 22:00,Hard Rock Stadium,CA Boca Juniors,SL Benfica,Group C,2 - 2
+8,1,17/06/2025 01:00,Lincoln Financial Field,CR Flamengo,Espérance de Tunisie,Group D,2 - 0
+9,1,17/06/2025 16:00,MetLife Stadium,Fluminense FC,Borussia Dortmund,Group F,0 - 0
+10,1,17/06/2025 19:00,Lumen Field,CA River Plate,Urawa Red Diamonds,Group E,3 - 1
+11,1,17/06/2025 23:05,Inter&Co Stadium,Ulsan HD,Mamelodi Sundowns FC,Group F,0 - 1
+12,1,18/06/2025 01:00,Rose Bowl Stadium,CF Monterrey,FC Internazionale Milano,Group E,1 - 1
+13,1,18/06/2025 16:00,Lincoln Financial Field,Manchester City,Wydad AC,Group G,2 - 0
+14,1,18/06/2025 19:00,Hard Rock Stadium,Real Madrid C.F.,Al Hilal,Group H,1 - 1
+15,1,18/06/2025 22:00,TQL Stadium,CF Pachuca,FC Salzburg,Group H,1 - 2
+16,1,19/06/2025 01:00,Audi Field,Al Ain FC,Juventus FC,Group G,0 - 5
+17,2,19/06/2025 16:00,MetLife Stadium,Palmeiras,Al Ahly FC,Group A,2 - 0
+18,2,19/06/2025 19:00,Mercedes-Benz Stadium,Inter Miami CF,FC Porto,Group A,2 - 1
+19,2,19/06/2025 22:00,Lumen Field,Seattle Sounders FC,Atlético de Madrid,Group B,1 - 3
+20,2,20/06/2025 01:00,Rose Bowl Stadium,Paris Saint-Germain,Botafogo,Group B,0 - 1
+21,2,20/06/2025 16:00,Inter&Co Stadium,SL Benfica,Auckland City FC,Group C,6 - 0
+22,2,20/06/2025 18:00,Lincoln Financial Field,CR Flamengo,Chelsea FC,Group D,3 - 1
+23,2,20/06/2025 22:00,GEODIS Park,LAFC,Espérance de Tunisie,Group D,0 - 1
+24,2,21/06/2025 01:00,Hard Rock Stadium,FC Bayern München,CA Boca Juniors,Group C,2 - 1
+25,2,21/06/2025 16:00,TQL Stadium,Mamelodi Sundowns FC,Borussia Dortmund,Group F,3 - 4
+26,2,21/06/2025 19:00,Lumen Field,FC Internazionale Milano,Urawa Red Diamonds,Group E,2 - 1
+27,2,21/06/2025 22:00,MetLife Stadium,Fluminense FC,Ulsan HD,Group F,4 - 2
+28,2,22/06/2025 01:00,Rose Bowl Stadium,CA River Plate,CF Monterrey,Group E,0 - 0
+29,2,22/06/2025 16:00,Lincoln Financial Field,Juventus FC,Wydad AC,Group G,4 - 1
+30,2,22/06/2025 19:00,Bank of America Stadium,Real Madrid C.F.,CF Pachuca,Group H,3 - 1
+31,2,22/06/2025 22:00,Audi Field,FC Salzburg,Al Hilal,Group H,0 - 0
+32,2,23/06/2025 01:00,Mercedes-Benz Stadium,Manchester City,Al Ain FC,Group G,6 - 0
+33,3,23/06/2025 19:00,Lumen Field,Seattle Sounders FC,Paris Saint-Germain,Group B,0 - 2
+34,3,23/06/2025 19:00,Rose Bowl Stadium,Atlético de Madrid,Botafogo,Group B,1 - 0
+35,3,24/06/2025 01:00,Hard Rock Stadium,Inter Miami CF,Palmeiras,Group A,2 - 2
+36,3,24/06/2025 01:00,MetLife Stadium,FC Porto,Al Ahly FC,Group A,4 - 4
+37,3,24/06/2025 19:00,GEODIS Park,Auckland City FC,CA Boca Juniors,Group C,1 - 1
+38,3,24/06/2025 19:00,Bank of America Stadium,SL Benfica,FC Bayern München,Group C,1 - 0
+39,3,25/06/2025 01:00,Lincoln Financial Field,Espérance de Tunisie,Chelsea FC,Group D,0 - 3
+40,3,25/06/2025 01:00,Camping World Stadium,LAFC,CR Flamengo,Group D,1 - 1
+41,3,25/06/2025 19:00,TQL Stadium,Borussia Dortmund,Ulsan HD,Group F,1 - 0
+42,3,25/06/2025 19:00,Hard Rock Stadium,Mamelodi Sundowns FC,Fluminense FC,Group F,0 - 0
+43,3,26/06/2025 01:00,Rose Bowl Stadium,Urawa Red Diamonds,CF Monterrey,Group E,0 - 4
+44,3,26/06/2025 01:00,Lumen Field,FC Internazionale Milano,CA River Plate,Group E,2 - 0
+45,3,26/06/2025 19:00,Audi Field,Wydad AC,Al Ain FC,Group G,1 - 2
+46,3,26/06/2025 19:00,Camping World Stadium,Juventus FC,Manchester City,Group G,2 - 5
+47,3,27/06/2025 01:00,GEODIS Park,Al Hilal,CF Pachuca,Group H,2 - 0
+48,3,27/06/2025 01:00,Lincoln Financial Field,FC Salzburg,Real Madrid C.F.,Group H,0 - 3
+49,Round of 16,28/06/2025 16:00,Lincoln Financial Field,Palmeiras,Botafogo,,1 - 0
+50,Round of 16,28/06/2025 20:00,Bank of America Stadium,SL Benfica,Chelsea FC,,1 - 4
+51,Round of 16,29/06/2025 16:00,Mercedes-Benz Stadium,Paris Saint-Germain,Inter Miami CF,,4 - 0
+52,Round of 16,29/06/2025 20:00,Hard Rock Stadium,CR Flamengo,FC Bayern München,,2 - 4
+53,Round of 16,30/06/2025 19:00,Bank of America Stadium,FC Internazionale Milano,Fluminense FC,,0 - 2
+54,Round of 16,01/07/2025 01:00,Camping World Stadium,Manchester City,Al Hilal,,3 - 4
+55,Round of 16,01/07/2025 19:00,Hard Rock Stadium,Real Madrid C.F.,Juventus FC,,1 - 0
+56,Round of 16,02/07/2025 01:00,Mercedes-Benz Stadium,Borussia Dortmund,CF Monterrey,,2 - 1
+57,Quarter Finals,04/07/2025 19:00,Camping World Stadium,Fluminense FC,Al Hilal,,2 - 1
+58,Quarter Finals,05/07/2025 01:00,Lincoln Financial Field,Palmeiras,Chelsea FC,,1 - 2
+59,Quarter Finals,05/07/2025 16:00,Mercedes-Benz Stadium,Paris Saint-Germain,FC Bayern München,,2 - 0
+60,Quarter Finals,05/07/2025 20:00,MetLife Stadium,Real Madrid C.F.,Borussia Dortmund,,3 - 2
+61,Semi Finals,08/07/2025 19:00,MetLife Stadium,Fluminense FC,Chelsea FC,,0 - 2
+62,Semi Finals,09/07/2025 19:00,MetLife Stadium,Paris Saint-Germain,Real Madrid C.F.,,
+63,Final,13/07/2025 19:00,MetLife Stadium,Chelsea FC,To be announced,,
