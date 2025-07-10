@@ -39,7 +39,6 @@ async def ingest_csv(
     start_time = datetime.now()
 
     try:
-        # Sanitize and validate table name
         sanitized_name = sanitize_table_name(table_name)
         if not sanitized_name.isidentifier():
             raise HTTPException(
@@ -47,13 +46,9 @@ async def ingest_csv(
                 detail="Invalid table name - must be alphanumeric with underscores",
             )
 
-        # Generate unique path in the data lake
         formatted_table_name = f"{sanitized_name}_{datetime.now().strftime('%Y%m%d')}"
 
-        # Read CSV content
         contents = await file.read()
-
-        # Use Polars to read CSV (similar to your existing code)
         df = pl.read_csv(io.BytesIO(contents))
 
         if df.is_empty():

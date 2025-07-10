@@ -5,10 +5,8 @@ from app.lake.scan_delta import scan_delta
 
 
 def main():
-    # Carrega dados
-    df = scan_delta("club_world_cup_20250709").collect()
+    df = scan_delta("club_world_cup_20250710").collect()
 
-    # Parse da data e gols separados
     df = df.with_columns(
         [
             pl.col("Date")
@@ -27,7 +25,6 @@ def main():
         ]
     )
 
-    # Placar formatado "x - y"
     df = df.with_columns(
         (
             pl.col("home_goals").cast(pl.Utf8)
@@ -70,9 +67,7 @@ def main():
     # Jogos por local
     games_by_location = df.group_by("Location").count().sort("count", descending=True)
 
-    # Plotagem
-
-    fig, axes = plt.subplots(2, 2, figsize=(18, 14), facecolor="#f9f9f9")
+    _, axes = plt.subplots(2, 2, figsize=(18, 14), facecolor="#f9f9f9")
 
     # Gráfico 1: Top 10 placares mais comuns
     top_scores = score_counts.head(10)
@@ -86,7 +81,6 @@ def main():
     )
     axes[0, 0].tick_params(axis="both", which="major", labelsize=11)
     axes[0, 0].grid(axis="y", linestyle="--", alpha=0.3)
-    # remove spines
     axes[0, 0].spines["top"].set_visible(False)
     axes[0, 0].spines["right"].set_visible(False)
 
@@ -136,11 +130,9 @@ def main():
     axes[1, 1].spines["top"].set_visible(False)
     axes[1, 1].spines["right"].set_visible(False)
 
-    # Espaçamento entre os gráficos
     plt.subplots_adjust(
         left=0.07, right=0.95, top=0.93, bottom=0.08, hspace=0.35, wspace=0.25
     )
-
     plt.show()
 
 

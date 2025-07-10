@@ -3,9 +3,6 @@ import polars as pl
 from app.lake.scan_delta import scan_delta
 from app.lake.write_delta import WriteMode, write_delta
 
-# ===============================
-# 1. Criar DataFrame simulado
-# ===============================
 df = pl.DataFrame(
     {
         "customer": ["Alice", "Bob", "Carol", "Dave", "Eve"],
@@ -14,9 +11,6 @@ df = pl.DataFrame(
     }
 ).with_columns((pl.col("price") * pl.col("quantity")).alias("total"))
 
-# ===============================
-# 2. Escrever como Delta no MinIO
-# ===============================
 print("🚀 Escrevendo Delta Table no MinIO...")
 
 write_delta(
@@ -27,9 +21,6 @@ write_delta(
 
 print("✅ Escrita concluída.")
 
-# ===============================
-# 3. Leitura com scan_delta + filtro
-# ===============================
 print("🔍 Lendo Delta Table do MinIO com filtro lazy...")
 
 scan = (

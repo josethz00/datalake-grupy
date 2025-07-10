@@ -28,6 +28,7 @@ def download_currency_batch(
     )
 
     try:
+        time.sleep(0.5)
         response = requests.get(url, timeout=10)
         response.encoding = "utf-8"
         df = pl.read_csv(io.StringIO(response.text), separator=";")
