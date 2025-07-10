@@ -1,6 +1,6 @@
 # 🛢️ Building a Data Lake with Python and Polars - Grupy-SP
 
-This project was built for a talk at [Grupy-SP](https://www.grupysp.org/) on **July 10, 2025**, and showcases how to build a lightweight data lake using **Python**, **Polars**, and **MinIO**.
+This project was built for a talk at [Grupy-SP](https://www.meetup.com/grupy-sp/) on **July 10, 2025**, and showcases how to build a lightweight data lake using **Python**, **Polars**, and **MinIO**.
 
 The project includes:
 - A Dockerized MinIO server (S3-compatible object storage)
@@ -14,6 +14,7 @@ The project includes:
 
 - **Python 3.13**
 - **[Polars](https://pola.rs/)** for fast and expressive data processing
+- **DeltaLake** as a layer for parquet files with enhanced capabilities
 - **MinIO** as local object storage (S3-compatible)
 - **FastAPI** for exposing APIs (optional)
 - **Matplotlib** for visualizations
@@ -77,6 +78,7 @@ make run-api
 │   │   ├── api/                     # FastAPI app
 │   │   └── pipelines/              # ETL scripts
 │   └── analysis/                   # Analysis & visualization
+│   └── lake/                       # Delta Lake interface
 ├── docker-compose.yml              # MinIO setup
 ├── Makefile                        # Easy task runner
 └── README.md
