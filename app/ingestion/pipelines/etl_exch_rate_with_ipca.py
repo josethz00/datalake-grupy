@@ -7,17 +7,8 @@ import polars as pl
 import requests
 from prefect import flow, task
 
-# --- CONFIGS ---
-MINIO_ENDPOINT = "http://localhost:9000"
-S3_DELTA_PATH = "s3://datalake/exchange_rates"
+from app.lake.write_delta import WriteMode, write_delta
 
-STORAGE_OPTIONS = {
-    "AWS_ACCESS_KEY_ID": "minioadmin",
-    "AWS_SECRET_ACCESS_KEY": "minioadmin",
-    "AWS_REGION": "us-east-1",
-    "AWS_ALLOW_HTTP": "true",
-    "endpoint_url": MINIO_ENDPOINT,
-}
 DATE_FORMAT_MASK = "%d/%m/%Y"
 
 
@@ -127,12 +118,7 @@ def join_and_write(currency_df: pl.DataFrame, ipca_df: pl.DataFrame) -> None:
         .select(["date", "currency", "rate", "monthly_inflation"])
     )
 
-    df.write_delta(
-        S3_DELTA_PATH,
-        mode="overwrite",
-        storage_options=STORAGE_OPTIONS,
-        delta_write_options={"schema_mode": "overwrite"},
-    )
+    write_delta(df, "exchange_rates", write_mode=WriteMode.OVERWRITE)
 
     elapsed = time.perf_counter() - start
     print(f"✅ Dados salvos no Delta Lake com {df.shape[0]} linhas em {elapsed:.2f}s\n")

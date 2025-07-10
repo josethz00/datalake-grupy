@@ -5,15 +5,7 @@ import polars as pl
 from fastapi import FastAPI, File, HTTPException, UploadFile
 from fastapi.responses import JSONResponse
 
-# MinIO/S3 configuration (same as your existing setup)
-MINIO_ENDPOINT = "http://localhost:9000"
-STORAGE_OPTIONS = {
-    "AWS_ACCESS_KEY_ID": "minioadmin",
-    "AWS_SECRET_ACCESS_KEY": "minioadmin",
-    "AWS_REGION": "us-east-1",
-    "AWS_ALLOW_HTTP": "true",
-    "endpoint_url": MINIO_ENDPOINT,
-}
+from app.lake.write_delta import WriteMode, write_delta
 
 app = FastAPI(
     title="CSV to Delta Lake Ingest API",
@@ -56,7 +48,7 @@ async def ingest_csv(
             )
 
         # Generate unique path in the data lake
-        s3_path = f"s3://datalake/{sanitized_name}_{datetime.now().strftime('%Y%m%d')}"
+        formatted_table_name = f"{sanitized_name}_{datetime.now().strftime('%Y%m%d')}"
 
         # Read CSV content
         contents = await file.read()
@@ -71,11 +63,10 @@ async def ingest_csv(
             )
 
         # Write to Delta format
-        df.write_delta(
-            s3_path,
-            mode="overwrite" if overwrite else "error",
-            storage_options=STORAGE_OPTIONS,
-            delta_write_options={"schema_mode": "overwrite"},
+        write_delta(
+            df,
+            formatted_table_name,
+            write_mode=WriteMode.OVERWRITE if overwrite else WriteMode.ERROR,
         )
 
         elapsed = (datetime.now() - start_time).total_seconds()
@@ -85,8 +76,7 @@ async def ingest_csv(
             content={
                 "status": "success",
                 "message": "File successfully ingested to Delta Lake",
-                "table_name": sanitized_name,
-                "s3_path": s3_path,
+                "table_name": formatted_table_name,
                 "row_count": df.shape[0],
                 "columns": df.columns,
                 "processing_time_seconds": elapsed,

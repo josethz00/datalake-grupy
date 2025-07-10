@@ -1,19 +1,7 @@
-import os
-
 import polars as pl
 
-# ===============================
-# 🔐 Configurações do MinIO
-# ===============================
-MINIO_ENDPOINT = "http://localhost:9000"
-MINIO_BUCKET = "datalake"
-S3_DELTA_PATH = f"s3://{MINIO_BUCKET}/dummy-test-table"
-
-os.environ["AWS_ACCESS_KEY_ID"] = "minioadmin"
-os.environ["AWS_SECRET_ACCESS_KEY"] = "minioadmin"
-os.environ["AWS_REGION"] = (
-    "us-east-1"  # necessário mesmo que MinIO não use regiões reais
-)
+from app.lake.scan_delta import scan_delta
+from app.lake.write_delta import WriteMode, write_delta
 
 # ===============================
 # 1. Criar DataFrame simulado
@@ -31,19 +19,10 @@ df = pl.DataFrame(
 # ===============================
 print("🚀 Escrevendo Delta Table no MinIO...")
 
-df.write_delta(
-    S3_DELTA_PATH,
-    mode="overwrite",
-    storage_options={
-        "AWS_ACCESS_KEY_ID": "minioadmin",
-        "AWS_SECRET_ACCESS_KEY": "minioadmin",
-        "AWS_REGION": "us-east-1",
-        "AWS_ALLOW_HTTP": "true",
-        "endpoint_url": MINIO_ENDPOINT,  # importante para MinIO
-    },
-    delta_write_options={
-        "schema_mode": "overwrite",
-    },
+write_delta(
+    df,
+    table="dummy-test-table",
+    write_mode=WriteMode.OVERWRITE,
 )
 
 print("✅ Escrita concluída.")
@@ -54,15 +33,8 @@ print("✅ Escrita concluída.")
 print("🔍 Lendo Delta Table do MinIO com filtro lazy...")
 
 scan = (
-    pl.scan_delta(
-        S3_DELTA_PATH,
-        storage_options={
-            "AWS_ACCESS_KEY_ID": "minioadmin",
-            "AWS_SECRET_ACCESS_KEY": "minioadmin",
-            "AWS_REGION": "us-east-1",
-            "AWS_ALLOW_HTTP": "true",
-            "endpoint_url": MINIO_ENDPOINT,
-        },
+    scan_delta(
+        "dummy-test-table",
     )
     .filter(pl.col("total") > 300)
     .select([pl.col("customer"), pl.col("total")])
